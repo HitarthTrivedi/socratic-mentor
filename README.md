@@ -16,6 +16,8 @@ Socratic Mentor is a plugin for [Claude Code](https://claude.com/claude-code) th
 
 We've all gotten used to pasting a problem into an AI and copying out the solution. It's fast — and it quietly erodes the ability to solve problems on our own. Socratic Mentor exists to reverse that: it makes you work for the answer, the way a good human tutor would, while still pointing you to the best resources on the internet to learn from.
 
+> 📦 **Full setup guide:** every command for installing, toggling, using on claude.ai, and deploying your own copy is in [install.md](./install.md).
+
 ## Who can use this, and how
 
 | You are… | How to get it |
