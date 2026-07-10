@@ -30,17 +30,9 @@ That's it. The plugin is now available in every project on your machine.
 
 ## Usage
 
-Activate the tutor:
+**Nothing to activate — it's always on.** Once installed, the plugin replaces Claude Code's default behavior: *every* response becomes Socratic, whether you ask "teach me X" or just "fix this bug". You cannot take the shortcut, even when you want to — that's the point.
 
-```
-/socratic-mentor:mentor
-```
-
-…or just talk naturally — Claude auto-activates it when your request matches, e.g.:
-
-> "Help me learn how neural networks work — but don't just tell me, teach me."
-
-Once active, it stays on for the rest of the session. Every response follows this shape:
+Every response follows this shape:
 
 | Section | What you get |
 |---|---|
@@ -50,10 +42,12 @@ Once active, it stays on for the rest of the session. Every response follows thi
 
 ## Deactivating
 
-Say **"exit mentor mode"** in the session, or start a new session. To remove the plugin entirely:
+Since it's always-on, you turn it off at the plugin level (then start a new session):
 
 ```
-/plugin uninstall socratic-mentor@hitarth-plugins
+/plugin disable socratic-mentor@hitarth-plugins   # keep it installed, turn it off
+/plugin enable socratic-mentor@hitarth-plugins    # turn it back on
+/plugin uninstall socratic-mentor@hitarth-plugins # remove it entirely
 ```
 
 ## Example
@@ -72,18 +66,21 @@ Say **"exit mentor mode"** in the session, or start a new session. To remove the
 
 ## How it works
 
-Claude Code plugins bundle **skills** — markdown instruction files that load into Claude's context when invoked. This plugin ships one skill (`skills/mentor/SKILL.md`) containing the tutoring rules: never answer directly, search before recommending, always include video resources, one question per reply, and a gradual escape hatch for genuinely stuck learners. It leans on Claude Code's built-in `WebSearch`/`WebFetch` tools for live resource discovery — **no API keys, no external services, nothing to configure**.
+The plugin ships a **custom agent** (`agents/socratic-mentor.md`) containing the tutoring rules — never answer directly, search before recommending, always include video resources, one question per reply, gradual escape hatch for genuinely stuck learners — plus a `settings.json` with `{"agent": "socratic-mentor"}`, which tells Claude Code to run that agent as the **main thread** whenever the plugin is enabled. That's what makes it always-on rather than opt-in. A standalone copy of the rules also ships as a skill (`skills/mentor/SKILL.md`) for anyone who prefers session-by-session activation. It leans on Claude Code's built-in `WebSearch`/`WebFetch` tools for live resource discovery — **no API keys, no external services, nothing to configure**.
 
 ## Repository structure
 
 ```
 socratic-mentor/
 ├── .claude-plugin/
-│   ├── plugin.json        # plugin manifest
-│   └── marketplace.json   # lets people add this repo as a marketplace
+│   ├── plugin.json          # plugin manifest
+│   └── marketplace.json     # lets people add this repo as a marketplace
+├── agents/
+│   └── socratic-mentor.md   # the always-on tutor agent (main thread)
+├── settings.json            # activates the agent by default
 ├── skills/
 │   └── mentor/
-│       └── SKILL.md       # the tutoring instructions
+│       └── SKILL.md         # opt-in variant of the same rules
 └── README.md
 ```
 
