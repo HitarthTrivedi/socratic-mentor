@@ -1,7 +1,7 @@
 {
   "name": "socratic-mentor",
   "description": "Turns Claude into a Socratic tutor — it guides you to the answer with hints, guiding questions, and real YouTube videos and courses found via web search, but never hands you the solution. Built to make you think for yourself again.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Hitarth Trivedi"
   },

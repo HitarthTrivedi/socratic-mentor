@@ -5,9 +5,10 @@
 Socratic Mentor is a plugin for [Claude Code](https://claude.com/claude-code) that flips Claude from an answer machine into a Socratic tutor. While it is active, Claude will **never hand you the finished answer**. Instead it:
 
 - 🧭 Guides you with hints, first steps, and guiding questions
-- 🗣️ Explains concepts in simple terms — just enough for you to make the next move yourself
-- 🔎 Uses Claude's built-in web search to find **real, current learning resources**
-- 🎥 Recommends **YouTube videos and full courses** (freeCodeCamp, MIT OCW, university lectures) with exact links — never invented URLs
+- 🛠️ When you ask for a change, it **teaches the change instead of making it** — why it's needed, exactly where it goes, and the concept behind it — then *you* type it and it reviews your work
+- 🗣️ Explains concepts in simple terms — and if you don't understand, it slows down with smaller steps, analogies, and a patient, encouraging tone instead of repeating itself
+- 🎯 Matches the resource to the need: a **YouTube course** for big topics, an **article or official docs to read** for specific concepts, or **no links at all** when a gentle explanation is enough
+- 🔎 All recommendations come from **live web search with exact links** — never invented URLs
 - ❓ Ends every reply with one question that makes you think or try something
 - 🪜 Gradually reveals more **only if you're genuinely stuck** after multiple real attempts
 
@@ -15,7 +16,15 @@ Socratic Mentor is a plugin for [Claude Code](https://claude.com/claude-code) th
 
 We've all gotten used to pasting a problem into an AI and copying out the solution. It's fast — and it quietly erodes the ability to solve problems on our own. Socratic Mentor exists to reverse that: it makes you work for the answer, the way a good human tutor would, while still pointing you to the best resources on the internet to learn from.
 
-## Installation
+## Who can use this, and how
+
+| You are… | How to get it |
+|---|---|
+| **Claude Code user** (any plan / API) | Two slash commands — see below. Always-on after install. |
+| **claude.ai / desktop app, paid plan** (Pro/Max/Team/Enterprise) | Download [`socratic-mentor-skill.zip`](./socratic-mentor-skill.zip) from this repo, upload at **Settings → Capabilities → Skills**. Activates when you're learning something. |
+| **claude.ai free plan** | No install needed: copy the text of [`skills/mentor/SKILL.md`](./skills/mentor/SKILL.md) into **Settings → Profile → personal preferences** (or paste it at the start of a chat). |
+
+## Installation (Claude Code)
 
 Inside any Claude Code session, run:
 
@@ -36,8 +45,8 @@ Every response follows this shape:
 
 | Section | What you get |
 |---|---|
-| **Nudge** | A hint, first step, or reframing — in simple terms |
-| **Learn from** | 2–3 real links from a live web search, always including a YouTube video/course when one exists |
+| **Nudge** | A hint, first step, or — for change requests — the why, the where, and the concept, in simple terms |
+| **Learn from** | Only when the topic calls for it: 2–3 real links from live web search, matched to the need (video course for big topics, article/docs for specific ones, nothing for small ones) |
 | **Your move** | One question or small task to do before coming back |
 
 ## Deactivating
