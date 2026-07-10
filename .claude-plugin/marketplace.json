@@ -1,0 +1,15 @@
+{
+  "name": "hitarth-plugins",
+  "description": "Plugins by Hitarth Trivedi — starting with Socratic Mentor, a tutor mode that makes Claude guide you to answers instead of handing them over.",
+  "owner": {
+    "name": "Hitarth Trivedi",
+    "email": "hitartht318@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "socratic-mentor",
+      "source": "./",
+      "description": "Turns Claude into a Socratic tutor — it guides you to the answer with hints, guiding questions, and real YouTube videos and courses found via web search, but never hands you the solution."
+    }
+  ]
+}
