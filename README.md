@@ -20,13 +20,13 @@ We've all gotten used to pasting a problem into an AI and copying out the soluti
 Inside any Claude Code session, run:
 
 ```
-/plugin marketplace add hitartht318/socratic-mentor
+/plugin marketplace add HitarthTrivedi/socratic-mentor
 /plugin install socratic-mentor@hitarth-plugins
 ```
 
 That's it. The plugin is now available in every project on your machine.
 
-> Replace `hitartht318/socratic-mentor` with the actual GitHub `owner/repo` if you forked this.
+> Replace `HitarthTrivedi/socratic-mentor` with the actual GitHub `owner/repo` if you forked this.
 
 ## Usage
 
